@@ -9,12 +9,14 @@ hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine', 'hbs');
 
 
+
+
 app.use((req, res, next) => {
   const now = new Date().toString();
 
   const log = `${now}: ${req.method} ${req.url}`;
   console.log(log);
-  fs.appendFileSync('server.log', log + '\n');
+  fs.appendFile('server.log', log + '\n');
 
   next();
 });
