@@ -1,5 +1,6 @@
 const express = require('express');
 const hbs = require('hbs');
+const favicon = require('serve-favicon');
 
 process.env.PORT = 3000;
 const port = process.env.PORT;
@@ -27,6 +28,7 @@ app.set('view engine', 'hbs');
 // });
 
 app.use(express.static(__dirname + '/public'));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
 
 hbs.registerHelper('getCurrentYear', () => {
