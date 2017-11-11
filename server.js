@@ -53,6 +53,13 @@ app.all('/about', (req, res) => {
   });
 });
 
+app.all('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: 'Projects page',
+    projectsPage: 'Projects page'
+  });
+});
+
 app.all('/bad', (req, res) => {
   res.send({errorMessage: 'Bad page'});
 });
